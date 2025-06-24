@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { Field } from '../../Types/Types'
 
 type FieldLayoutProps = {
@@ -5,7 +6,7 @@ type FieldLayoutProps = {
   handleNextTurn: (index: number, symbol: string) => void
 }
 
-const FieldLayout = ({ gameField, handleNextTurn }: FieldLayoutProps) => {
+const FieldLayout: FC<FieldLayoutProps> = ({ gameField, handleNextTurn }) => {
   return (
     <div className='bg-gray-600 text-green-700 w-full h-full grid grid-cols-3 gap-1 mt-4'>
       {gameField.map((symbol, index) => (
