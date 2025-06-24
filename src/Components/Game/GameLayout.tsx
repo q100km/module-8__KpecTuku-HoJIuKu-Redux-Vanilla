@@ -1,20 +1,12 @@
 import { FC } from 'react'
-import { useHandleStore } from '../../Redux/useHandleStore'
-import { Actions as a } from '../../Redux/Actions'
 
 type GameLayoutProps = {
   Information: React.ReactElement
   Field: React.ReactElement
+  handleRestart: () => void
 }
 
-const GameLayout: FC<GameLayoutProps> = ({ Information, Field }) => {
-  //
-  const [state, dispatch] = useHandleStore()
-
-  const handleRestart = (): void => {
-    dispatch({ type: a.RESTART_GAME })
-  }
-  //
+const GameLayout: FC<GameLayoutProps> = ({ Information, Field, handleRestart }) => {
   return (
     <div className='flex flex-col'>
       {Information}
